@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-
+import { UnescapePipe } from './unescape.pipe';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -15,7 +15,8 @@ import { QuizComponent } from './quiz/quiz.component';
     AppComponent,
     QuestionsComponent,
     ResultsComponentComponent,
-    QuizComponent
+    QuizComponent,
+    UnescapePipe
   ],
   imports: [
     BrowserModule,
