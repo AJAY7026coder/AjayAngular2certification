@@ -1,0 +1,11 @@
+button.active,.green{
+ background : green;
+}
+
+.wrong-answer,.red{
+  background : red !important;
+}
+
+.yellow{
+ background : yellow !important;
+}

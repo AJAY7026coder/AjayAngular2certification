@@ -1,0 +1,21 @@
+
+
+<div style="text-align:center">
+
+  <div class="mt-4 ml-3" style="margin-right:10px;" data-live-search="true" *ngFor="let question of questions;let i = index" >
+    <p>{{question.question}}</p>
+
+    <div>
+        <span *ngFor="let answer of question.incorrect_answers;">
+         <button [ngClass]="{'active': answer == question.userSelectedAnswer}" (click)="setUserSelectedAnswer(question,answer)" style="margin-right : 20px;" > {{answer}}</button>
+       </span>
+    </div>
+
+  </div>
+
+
+    <div style="margin-top : 20px;text-align: center;" [hidden]="!isAllAnswersSelected">
+      <a  (click)="showResults();"> <button style="width: 500px;">Submit</button> </a>
+    </div>
+
+</div>

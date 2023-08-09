@@ -1,0 +1,30 @@
+
+
+<div style="text-align:center">
+
+          <h1>RESULTS</h1>
+
+  <div class="mt-4 ml-3" style="margin-right:10px;" data-live-search="true" *ngFor="let question of questions;let i = index" >
+    <p>{{question.question}}</p>
+
+    <div>
+        <span *ngFor="let answer of question.incorrect_answers;">
+         <button [ngClass]="{'active': answer == question.correct_answer,'wrong-answer' : answer != question.correct_answer && answer == question.userSelectedAnswer}"  style="margin-right : 20px;" > {{answer}}</button>
+       </span>
+    </div>
+
+  </div>
+
+
+  <div style="margin-top : 20px;text-align: center; ">
+
+      <p class="{{cssClass}}" style="width: 500px;margin: auto;"> You Scored {{noOfSelectedAnswers}} out of 5 </p>
+
+  </div>
+
+
+  <div style="margin-top : 20px;text-align: center;">
+    <a  (click)="createNewQuiz();"> <button style="width: 500px;">Create a new quiz</button> </a>
+  </div>
+
+</div>

@@ -1,0 +1,33 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<div style="text-align:center">
+  <h1>
+    QUIZ MAKER
+  </h1>
+</div>
+
+<div style="text-align:center">
+
+  <select  [(ngModel)]="selectedCategory" class="selectpicker dropdown mt-4 ml-3" style="margin-right:10px;" id="categorySelect" data-live-search="true">
+    <option value="">Select a category</option>
+    <option *ngFor="let category of categories" [ngValue]="category.id">{{category.name}}</option>
+  </select>
+
+  <span>&nbsp;</span>
+  <select [(ngModel)]="selectedDifficulty" class="selectpicker dropdown mt-4 ml-3" style="margin-right:10px;" id="difficultySelect" data-live-search="true">
+    <option value="">Select difficulty</option>
+    <option value="easy">Easy</option>
+    <option value="medium">Medium</option>
+    <option value="hard">Hard</option>
+  </select>
+
+  <span>&nbsp;</span>
+
+  <button id="createBtn" (click)="createQuiz()">Create</button>
+
+</div>
+
+<div>&nbsp;</div>
+
+
+<app-questions ></app-questions>
